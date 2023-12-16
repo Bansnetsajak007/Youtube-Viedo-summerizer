@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Summerizer</title>
+</head>
+<body>
+    <div class="container">
+        <form action="/summerize"  method="POST">
+            <h1>Summerize Youtube Viedo</h1>
+            <input type="text" id="url" name="viedoUrl" placeholder="Youtube viedo URL">
+            <button id="main-btn">Summerize</button>
+        </form>   
+        <div class="result">
+            <!-- All the summerize text goes here -->
+            <% if (typeof validFlag != "undefined" && validFlag) { %>
+                <div class="success">
+                  <p> <%= summerizeText%> </p>
+                </div>
+              <% } else if (typeof validFlag != "undefined" && !validFlag) { %>
+                <div class="errors">
+                  <p> <%= message %> </p>
+                </div>
+              <% } %>
+            
+        </div>
+        </div>
+    </div>
+</body>
+</html>
