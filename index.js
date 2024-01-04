@@ -1,7 +1,3 @@
-//main server 
-// no i will not overthink while making this project
-//jasari ni garxu garxu
-
 import  express  from "express";
 import dotenv from "dotenv";
 import axios from "axios";
