@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "author": "sajak basnet",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "express": "^4.18.2",
     "nodemon": "^3.0.2",
     "openai": "^4.22.0",
+    "youtube-captions-scraper": "^2.0.3",
     "youtube-transcript": "^1.0.6"
   }
 }
