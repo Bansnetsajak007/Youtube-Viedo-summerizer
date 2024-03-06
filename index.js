@@ -42,7 +42,8 @@ const extractText = async (viedoId) => {
         const concatenatedText = captions.reduce((acc , current) => {
           return acc + current.text;
         })
-        return concatenatedText;
+        let formattedString = concatenatedText.replace(/\s{2,}/g, ' ').trim();
+        return formattedString;
   } catch (error) {
       console.log(error.meessage);
   }
@@ -59,9 +60,7 @@ app.post('/summerize' , async (req , res) => {
     //hit an api endpoint
     
         let viedoId = getVideoId(url);
-        // console.log("ID: ",viedoId);
         const text = await extractText(viedoId);
-        // console.log("text: ",text);
 
         const options = {
             method: 'POST',
