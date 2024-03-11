@@ -1,7 +1,7 @@
 import  express  from "express";
 import dotenv from "dotenv";
 import axios from "axios";
-import { getSubtitles } from 'youtube-captions-scraper';
+import  { getSubtitles }  from 'youtube-captions-scraper';
 
 dotenv.config();
 
@@ -42,8 +42,7 @@ const extractText = async (viedoId) => {
         const concatenatedText = captions.reduce((acc , current) => {
           return acc + current.text;
         })
-        let formattedString = concatenatedText.replace(/\s{2,}/g, ' ').trim();
-        return formattedString;
+        return concatenatedText;
   } catch (error) {
       console.log(error.meessage);
   }
@@ -61,7 +60,6 @@ app.post('/summerize' , async (req , res) => {
     
         let viedoId = getVideoId(url);
         const text = await extractText(viedoId);
-
         const options = {
             method: 'POST',
             url: 'https://gpt-summarization.p.rapidapi.com/summarize',
