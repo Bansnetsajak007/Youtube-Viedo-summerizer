@@ -1,3 +1,5 @@
+//will see this Tomorrow
+
 import  express  from "express";
 import dotenv from "dotenv";
 import axios from "axios";
@@ -76,12 +78,12 @@ app.post('/summerize' , async (req , res) => {
           
           try {
             const response = await axios.request(options);
-            // console.log("response",response);
+            console.log("response",response);
             if(response) {
               res.render("app", {validFlag : true , summerizeText : response.data.summary});
             }
           } catch (error) {
-            res.render("app" , {validFlag : false ,summerizeText : "Provided viedo does not have transcripts" })
+            res.render("app" , {validFlag : false ,message : "Provided viedo does not have transcripts" })
           }
           };
           
